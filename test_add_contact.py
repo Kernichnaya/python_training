@@ -41,13 +41,13 @@ class TestAddContact(unittest.TestCase):
         wd.find_element_by_name("address").send_keys(contact.address)
         wd.find_element_by_name("home").click()
         wd.find_element_by_name("home").clear()
-        wd.find_element_by_name("home").send_keys(contact.home)
+        wd.find_element_by_name("home").send_keys(contact.homephone)
         wd.find_element_by_name("mobile").click()
         wd.find_element_by_name("mobile").send_keys(contact.mobile)
         wd.find_element_by_name("work").click()
-        wd.find_element_by_name("work").send_keys(contact.work)
+        wd.find_element_by_name("work").send_keys(contact.workphone)
         wd.find_element_by_name("fax").click()
-        wd.find_element_by_name("fax").send_keys(contact.fax)
+        wd.find_element_by_name("fax").send_keys(contact.faxphone)
         wd.find_element_by_name("email").click()
         wd.find_element_by_name("email").send_keys(contact.email)
         wd.find_element_by_name("email2").click()
@@ -86,12 +86,11 @@ class TestAddContact(unittest.TestCase):
         self.login(wd, username="admin", password="secret")
         self.open_contact_add(wd)
         self.contact_add(wd, Contact(firstname="lv", middlname="kr", lastname="lv2", nickname="kr2", title="Title",
-                                     company="Company2", address="elizarovix", home="home", mobile="+79293713057",
-                                     work="wrk)", fax="fax", email="klobastov@gmal.com", email2="Ker@fyhd.ffv",
-                                     email3="rtg@ds.dff", homepage="dfgdfg", bday="14", bmonth="September",
-                                     byear="2000",
-                                     aday="15", amonth="November", ayear="1997", address2="Adress", phone2="852451285",
-                                     notes="23"))
+                                     company="Company2", address="elizarovix", homephone="97-52-5", mobile="+79293713057",
+                                     workphone="89893585085", faxphone="89811115085", email="klobastov@gmal.com", email2="Ker@gmal.com",
+                                     email3="rtg@gmal.com", homepage="dfgdfg", bday="14", bmonth="September",
+                                     byear="2000", aday="15", amonth="November", ayear="1997", address2="Adress",
+                                     phone2="852451285", notes="23"))
         self.logout(wd)
 
     def tearDown(self):
