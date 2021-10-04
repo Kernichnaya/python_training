@@ -2,7 +2,6 @@
 import pytest
 from group import Group
 from application import Application
-from contact import Contact
 
 @pytest.fixture
 def app(request):
