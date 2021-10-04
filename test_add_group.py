@@ -1,82 +1,35 @@
 # -*- coding: utf-8 -*-
-from select import select
-
-from selenium.webdriver.firefox.webdriver import WebDriver
-import unittest
-from selenium.webdriver.support.select import Select
-from contact import Contact
+import pytest
 from group import Group
+from application import Application
+from contact import Contact
 
-def is_alert_present(wd):
-    try:
-        wd.switch_to_alert().text
-        return True
-    except:
-        return False
+@pytest.fixture
+def app(request):
+    fixture = Application()
+    request.addfinalizer(fixture.destroy)
+    return fixture
 
-class TestAddGroup(unittest.TestCase):
-    def setUp(self):
-        self.wd = WebDriver()
-        self.wd.implicitly_wait(30)
+def test_add_group(app):
+    app.login(username="admin", password="secret")
+    app.open_groups_page()
+    app.create_group(Group(name="Group1", header="Group1", footer="Group1"))
+    app.logout()
 
-    def open_home_page(self, wd):
-        wd.get("http://localhost/addressbook/")
+def test_empty_add_group(app):
+    app.login(username="admin", password="secret")
+    app.create_group(Group(name="", header="", footer=""))
+    app.logout()
 
-    def login(self, wd, username, password):
-        wd.find_element_by_name("user").click()
-        wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys(username)
-        wd.find_element_by_name("pass").click()
-        wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys(password)
-        wd.find_element_by_xpath("//input[@value='Login']").click()
+def test_create_add_new(app):
+    app.login(username="admin", password="secret")
+    app.contact_add(Contact(firstname="lv", middlname="kr", lastname="lv2", nickname="kr2", title="Title",
+                            company="Company2", address="elizarovix", homephone="97-52-5", mobile="+79293713057",
+                            workphone="89893585085", faxphone="89811115085", email="klobastov@gmal.com",
+                            email2="Ker@gmal.com",
+                            email3="rtg@gmal.com", homepage="dfgdfg", bday="14", bmonth="September",
+                            byear="2000", aday="15", amonth="November", ayear="1997", address2="Adress",
+                            phone2="852451285", notes="23"))
+    app.logout()
 
-    def open_groups_page(self, wd):
-        wd.find_element_by_link_text("groups").click()
 
-    def create_group(self, wd, group):
-        # init group creation
-        wd.find_element_by_name("new").click()
-        # fill group form
-        wd.find_element_by_name("group_name").click()
-        wd.find_element_by_xpath("//body").click()
-        wd.find_element_by_name("group_name").clear()
-        wd.find_element_by_name("group_name").send_keys(group.name)
-        wd.find_element_by_name("group_header").click()
-        wd.find_element_by_name("group_header").clear()
-        wd.find_element_by_name("group_header").send_keys(group.header)
-        wd.find_element_by_name("group_footer").click()
-        wd.find_element_by_name("group_footer").clear()
-        wd.find_element_by_name("group_footer").send_keys(group.footer)
-        # submit group creation
-        wd.find_element_by_name("submit").click()
-
-    def return_to_groups_page(self, wd):
-        wd.find_element_by_link_text("group page").click()
-
-    def logout(self, wd):
-        wd.find_element_by_link_text("Logout").click()
-
-    def test_add_group(self):
-        wd = self.wd
-        self.open_home_page(wd)
-        self.login(wd, username="admin", password="secret")
-        self.open_groups_page(wd)
-        self.create_group(wd, Group(name="Group1", header="Group1", footer="Group1"))
-        self.return_to_groups_page(wd)
-        self.logout(wd)
-
-    def test_empty_add_group(self):
-        wd = self.wd
-        self.open_home_page(wd)
-        self.login(wd, username="admin", password="secret")
-        self.open_groups_page(wd)
-        self.create_group(wd, Group(name="", header="", footer=""))
-        self.return_to_groups_page(wd)
-        self.logout(wd)
-
-    def tearDown(self):
-        self.wd.quit()
-
-if __name__ == "__main__":
-    unittest.main()
