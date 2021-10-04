@@ -6,11 +6,11 @@ class ContactHelper:
         self.app = app
 
     def open_contact_add(self):
-        wd = self.add.wd
+        wd = self.create.wd
         wd.find_element_by_link_text("add new").click()
 
-    def add(self, contact):
-        wd = self.add.wd
+    def create(self, contact):
+        wd = self.create.wd
         self.open_contact_add()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").send_keys(contact.firstname)
