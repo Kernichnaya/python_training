@@ -12,17 +12,17 @@ def app(request):
 
 def test_add_group(app):
     app.session.login(username="admin", password="secret")
-    app.create_group(Group(name="Group1", header="Group1", footer="Group1"))
+    app.group.create(Group(name="Group1", header="Group1", footer="Group1"))
     app.session.logout()
 
 def test_empty_add_group(app):
     app.session.login(username="admin", password="secret")
-    app.create_group(Group(name="", header="", footer=""))
+    app.group.create(Group(name="", header="", footer=""))
     app.session.logout()
 
-def test_create_add_new(app):
+def test_add_contact(app):
     app.session.login(username="admin", password="secret")
-    app.contact_add(Contact(firstname="lv", middlname="kr", lastname="lv2", nickname="kr2", title="Title",
+    app.contact.add(Contact(firstname="lv", middlname="kr", lastname="lv2", nickname="kr2", title="Title",
                             company="Company2", address="elizarovix", homephone="97-52-5", mobile="+79293713057",
                             workphone="89893585085", faxphone="89811115085", email="klobastov@gmal.com",
                             email2="Ker@gmal.com",
