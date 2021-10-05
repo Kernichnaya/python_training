@@ -1,16 +1,17 @@
 from selenium.webdriver.support.select import Select
 
+
 class ContactHelper:
 
     def __init__(self, app):
         self.app = app
 
     def open_contact_add(self):
-        wd = self.create.wd
+        wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
 
-    def create(self, contact):
-        wd = self.create.wd
+    def createcon(self, contact):
+        wd = self.app.wd
         self.open_contact_add()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").send_keys(contact.firstname)
