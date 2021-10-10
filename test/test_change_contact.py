@@ -1,7 +1,7 @@
 from model.contact import Contact
 
 
-def test_change_first_group(app):
+def test_change_first_contact(app):
     app.session.login(username="admin", password="secret")
     app.contact.changecon(
         Contact(firstname="Иванов", middlname="Иван", lastname="Иванович", nickname="ИИИ", title="Title 2",
