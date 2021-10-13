@@ -24,5 +24,9 @@ class Application:
         except:
             return False
 
+    def open_home_page(self):
+        wd = self.wd
+        wd.get("https://localhost/addressbook/")
+
     def destroy(self):
         self.wd.quit()
