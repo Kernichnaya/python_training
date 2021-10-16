@@ -2,6 +2,8 @@ from model.contact import Contact
 
 
 def test_modify_contact_name(app):
+    if app.contact.countcon() == 0:
+        app.contact.createcon(Contact(firstname="test"))
     app.contact.modify_first_contact(
         Contact(firstname="Иванов", middlename="Иван", lastname="Иванович", nickname="ИИИ", title="Title 2",
                 company="Company", address="Ленина", homephone="8-800-55", mobile="+88005553535",
