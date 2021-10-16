@@ -8,11 +8,13 @@ class ContactHelper:
 
     def open_start_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
+        if not len(wd.find_elements_by_name("//input[@value='Delete']")) > 0:
+            wd.find_element_by_link_text("home").click()
 
     def open_contact_add(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("add new").click()
+        if not len(wd.find_elements_by_link_text("Edit / add address book entry")) > 0:
+            wd.find_element_by_link_text("add new").click()
 
     def change_field_value_con(self, field_data, text):
         wd = self.app.wd
