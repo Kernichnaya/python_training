@@ -84,4 +84,5 @@ class ContactHelper:
 
     def countcon(self):
         wd = self.app.wd
+        self.open_start_page()
         return len(wd.find_elements_by_name("selected[]"))
