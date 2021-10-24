@@ -95,9 +95,9 @@ class ContactHelper:
         wd = self.app.wd
         self.open_start_page()
         contacts = []
-        for element in wd.find_elements_by_css_selector("entry"):
+        for element in wd.find_elements_by_name("entry"):
             idcon = element.find_element_by_name("selected[]").get_attribute("value")
-            firstname = element.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[3]").text
-            lastname = element.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[2]").text
+            firstname = element.find_element_by_xpath(".//td[3]").text
+            lastname = element.find_element_by_xpath(".//td[2]").text
             contacts.append(Contact(firstname=firstname, lastname=lastname, idcon=idcon))
         return contacts
