@@ -1,4 +1,5 @@
 from selenium.webdriver.support.select import Select
+from model.contact import Contact
 
 
 class ContactHelper:
@@ -62,6 +63,7 @@ class ContactHelper:
         self.open_contact_add()
         self.fill_contact_form(contact)
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        self.open_start_page()
 
     def selected_first_contact(self):
         wd = self.app.wd
@@ -74,6 +76,7 @@ class ContactHelper:
         # submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
+        self.open_start_page()
 
     def modify_first_contact(self, modify_first_contact):
         wd = self.app.wd
@@ -81,8 +84,20 @@ class ContactHelper:
         wd.find_element_by_xpath("//img[@title='Edit']").click()
         self.fill_contact_form(modify_first_contact)
         wd.find_element_by_name("update").click()
+        self.open_start_page()
 
     def countcon(self):
         wd = self.app.wd
         self.open_start_page()
         return len(wd.find_elements_by_name("selected[]"))
+
+    def get_contact_list(self):
+        wd = self.app.wd
+        self.open_start_page()
+        contacts = []
+        for element in wd.find_elements_by_css_selector("entry"):
+            idcon = element.find_element_by_name("selected[]").get_attribute("value")
+            firstname = element.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[3]").text
+            lastname = element.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[2]").text
+            contacts.append(Contact(firstname=firstname, lastname=lastname, idcon=idcon))
+        return contacts
