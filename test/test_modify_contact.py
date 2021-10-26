@@ -12,6 +12,7 @@ def test_modify_contact_name(app):
                       email3="ivanov3@gmal.com", homepage="qwerty", bday="15", bmonth="September",
                       byear="2001", aday="16", amonth="November", ayear="1998", address2="Adress2",
                       phone2="852451285", notes="24")
+    contact.id = old_contacts[0].id
     app.contact.modify_first_contact(contact)
     new_contacts = app.contact.get_contact_list()
     assert len(old_contacts) == len(new_contacts)
