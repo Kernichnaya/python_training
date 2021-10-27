@@ -90,12 +90,11 @@ class ContactHelper:
     def modify_first_contact(self):
         self.modify_contact_by_index(0)
 
-    def modify_contact_by_index(self, index, modify_first_contact):
+    def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         self.open_start_page()
-        self.select_contact_by_index(index)
-        wd.find_element_by_xpath("//img[@title='Edit']").click()
-        self.fill_contact_form(modify_first_contact)
+        wd.find_elements_by_xpath('//img[@title="Edit"]')[index].click()
+        self.fill_contact_form(new_contact_data)
         wd.find_element_by_name("update").click()
         self.open_start_page()
         self.contact_cache = None
