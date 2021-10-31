@@ -1,5 +1,4 @@
 from selenium.webdriver.support.select import Select
-from selenium.webdriver.support.ui import Select
 from model.contact import Contact
 import re
 
