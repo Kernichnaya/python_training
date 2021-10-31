@@ -47,8 +47,28 @@ class Contact:
             return maxsize
 
     def __repr__(self):
-        return "%s:%s:%s" % (self.id, self.lastname, self.firstname)
+        return "%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s:%s" % (
+            self.id, self.lastname, self.firstname, self.middlename,
+            self.nickname, self.company, self.address, self.homephone,
+            self.mobile, self.faxphone, self.workphone, self.bday,
+            self.bmonth, self.byear, self.email, self.email2, self.email3
+        )
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) \
-               and self.lastname == other.lastname and self.firstname == other.firstname
+               and (self.firstname is None or other.firstname is None or self.firstname == other.firstname) \
+               and (self.middlename is None or other.middlename is None or self.middlename == other.middlename) \
+               and (self.lastname is None or other.lastname is None or self.lastname == other.lastname) \
+               and (self.nickname is None or other.nickname is None or self.nickname == other.nickname) \
+               and (self.company is None or other.company is None or self.company == other.company) \
+               and (self.address is None or other.address is None or self.address == other.address) \
+               and (self.homephone is None or other.homephone is None or self.homephone == other.homephone) \
+               and (self.mobile is None or other.mobile is None or self.mobile == other.mobile) \
+               and (self.faxphone is None or other.faxphone is None or self.faxphone == other.faxphone) \
+               and (self.workphone is None or other.workphone is None or self.workphone == other.workphone) \
+               and (self.bday is None or other.bday is None or self.bday == other.bday) \
+               and (self.bmonth is None or other.bmonth is None or self.bmonth == other.bmonth) \
+               and (self.byear is None or other.byear is None or self.byear == other.byear) \
+               and (self.email is None or other.email is None or self.email == other.email) \
+               and (self.email2 is None or other.email2 is None or self.email2 == other.email2) \
+               and (self.email3 is None or other.email3 is None or self.email3 == other.email3)
