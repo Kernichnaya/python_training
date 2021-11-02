@@ -41,12 +41,18 @@ def pytest_addoption(parser):
 
 def pytest_generate_tests(metafunc):
     for fixture in metafunc.fixturenames:
-        if fixture.startswith("data_"):
+        if fixture.startswith("data_gr"):
             testdata = load_from_module(fixture[5:])
             metafunc.parametrize(fixture, testdata, ids=[str(x) for x in testdata])
-        elif fixture.startswith("json_"):
+        elif fixture.startswith("data_co"):
+            testdatacontact = load_form_module_contact(fixture[5:])
+            metafunc.parametrize(fixture, testdatacontact, ids=[str(x) for x in testdatacontact])
+        elif fixture.startswith("json_groups"):
             testdata = load_from_json(fixture[5:])
             metafunc.parametrize(fixture, testdata, ids=[str(x) for x in testdata])
+        elif fixture.startswith("json_contacts"):
+            testdatacontact = load_form_json_contact(fixture[5:])
+            metafunc.parametrize(fixture, testdatacontact, ids=[str(x) for x in testdatacontact])
 
 
 def load_from_module(module):
@@ -55,4 +61,13 @@ def load_from_module(module):
 
 def load_from_json(file):
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/%s.json" % file)) as f:
+        return jsonpickle.decode(f.read())
+
+
+def load_form_module_contact(module):
+    return importlib.import_module("data.%s" % module).testdatacontact
+
+
+def load_form_json_contact(file):
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/contacts.json")) as f:
         return jsonpickle.decode(f.read())
