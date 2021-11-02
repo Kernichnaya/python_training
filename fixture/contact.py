@@ -1,7 +1,6 @@
 from selenium.webdriver.support.select import Select
 from model.contact import Contact
 import re
-
 class ContactHelper:
 
     def __init__(self, app):
@@ -57,7 +56,7 @@ class ContactHelper:
         self.change_field_value_con("phone2", contact.phone2)
         self.change_field_value_con("notes", contact.notes)
 
-    def createcon(self, contact):
+    def createcontact(self, contact):
         wd = self.app.wd
         self.open_start_page()
         self.open_contact_add()
