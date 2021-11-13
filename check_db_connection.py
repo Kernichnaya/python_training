@@ -1,4 +1,43 @@
-import pymysql.cursors
+from fixture.orm import ORMFixture
+from model.group import Group
+
+db = ORMFixture(host='127.0.0.1', name='addressbook', user='root', password='')
+
+try:
+    l = db.get_not_empty_groups()
+    for item in l:
+        print(item)
+    print(len(l))
+finally:
+    pass
+
+"""from fixture.orm import ORMFixture
+
+db = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
+
+
+try:
+    l = db.get_contact_list()
+    for item in l:
+        print(item)
+    print(len(l))
+finally:
+    pass"""
+
+"""from fixture.db import DbFixture
+
+db = DbFixture(host="127.0.0.1", name="addressbook", user="root", password="")
+
+
+try:
+    contacts = db.get_contact_list()
+    for contact in contacts:
+        print(contact)
+    print(len(contacts))
+finally:
+    db.destroy()"""
+
+"""import pymysql.cursors
 
 connection = pymysql.connect(host="127.0.0.1", database="addressbook", user="root", password="")
 
@@ -8,4 +47,4 @@ try:
     for row in cursor.fetchall():
         print(row)
 finally:
-    connection.close()
+    connection.close()"""
