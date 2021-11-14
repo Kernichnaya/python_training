@@ -1,6 +1,10 @@
 from selenium.webdriver.support.select import Select
 from model.contact import Contact
 import re
+from model.group import Group
+import random
+
+
 class ContactHelper:
 
     def __init__(self, app):
@@ -73,6 +77,10 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
 
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
     def delete_first_contact(self):
         self.delete_contact_by_index(0)
 
@@ -96,10 +104,6 @@ class ContactHelper:
         self.open_start_page()
         self.contact_cache = None
 
-    def select_contact_by_id(self, id):
-        wd = self.app.wd
-        wd.find_element_by_css_selector("input[value='%s']" % id).click()
-
     def modify_first_contact(self):
         self.modify_contact_by_index(0)
 
@@ -121,6 +125,40 @@ class ContactHelper:
         wd.find_element_by_css_selector("div.msgbox")
         self.open_start_page()
         self.contact_cache = None
+
+    def add_in_group(self, id):
+        wd = self.app.wd
+        self.open_start_page()
+        wd.find_element_by_link_text("groups").click()
+        group = random.choice(self.get_group_value())
+        self.open_none_group()
+        self.select_checkbox_by_id(id)
+        wd.find_element_by_name("to_group").click()
+        Select(wd.find_element_by_name("to_group")).select_by_value(group)
+        wd.find_element_by_name("add").click()
+        wd.find_element_by_css_selector("div.msgbox")
+        self.open_start_page()
+
+    def del_in_group_by_id(self, id):
+        wd = self.app.wd
+        group = random.choice(self.get_group_value())
+        self.open_start_page()
+        wd.find_element_by_name("group").click()
+        Select(wd.find_element_by_name("group")).select_by_value(group)
+        self.select_checkbox_by_id(id)
+        wd.find_element_by_name("remove").click()
+        wd.find_element_by_css_selector("div.msgbox")
+        self.open_start_page()
+
+    def get_group_value(self):
+        wd = self.app.wd
+        self.open_start_page()
+        wd.find_element_by_link_text("groups").click()
+        group_cache = []
+        for element in wd.find_elements_by_css_selector("span.group"):
+            id = element.find_element_by_name("selected[]").get_attribute("value")
+            group_cache.append(id)
+        return list(group_cache)
 
     def random_modify_id(self, id):
         wd = self.app.wd
@@ -147,12 +185,70 @@ class ContactHelper:
         cell = row.find_elements_by_tag_name("td")[6]
         cell.find_element_by_tag_name("a").click()
 
+    def open_none_group(self):
+        wd = self.app.wd
+        self.open_start_page()
+        wd.find_element_by_name("group").click()
+        Select(wd.find_element_by_name("group")).select_by_visible_text("[none]")
+
+    def open_test_group(self):
+        wd = self.app.wd
+        self.open_start_page()
+        wd.find_element_by_name("group").click()
+        Select(wd.find_element_by_name("group")).select_by_visible_text("test")
+
+    def select_checkbox_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
+    def get_contact_list_in_none_group(self):
+        wd = self.app.wd
+        self.open_start_page()
+        self.open_none_group()
+        entry = wd.find_elements_by_name("entry")
+        if self.contact_cache is None:
+            self.contact_cache = []
+            for element in entry:
+                cells = element.find_elements_by_xpath("td")
+                lastname = element.find_element_by_xpath("td[2]").text
+                firstname = element.find_element_by_xpath("td[3]").text
+                address = element.find_element_by_xpath("td[4]").text
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                all_phones = cells[5].text
+                all_emails = cells[4].text
+                self.contact_cache.append(
+                    Contact(lastname=lastname, firstname=firstname, id=id, all_phones_from_home_page=all_phones
+                            , address=address, all_emails_from_home_page=all_emails))
+        return list(self.contact_cache)
+
     def get_contact_list(self):
         if self.contact_cache is None:
             wd = self.app.wd
             self.open_start_page()
             self.contact_cache = []
             for element in wd.find_elements_by_name("entry"):
+                cells = element.find_elements_by_xpath("td")
+                lastname = element.find_element_by_xpath("td[2]").text
+                firstname = element.find_element_by_xpath("td[3]").text
+                address = element.find_element_by_xpath("td[4]").text
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                all_phones = cells[5].text
+                all_emails = cells[4].text
+                self.contact_cache.append(Contact(lastname=lastname, firstname=firstname, id=id, address=address,
+                                                  all_phones_from_home_page=all_phones,
+                                                  all_emails_from_home_page=all_emails))
+        return list(self.contact_cache)
+
+    def get_contact_list_in_group(self):
+        wd = self.app.wd
+        group = random.choice(self.get_group_value())
+        self.open_start_page()
+        wd.find_element_by_name("group").click()
+        Select(wd.find_element_by_name("group")).select_by_value(group)
+        entry = wd.find_elements_by_name("entry")
+        if self.contact_cache is None:
+            self.contact_cache = []
+            for element in entry:
                 cells = element.find_elements_by_xpath("td")
                 lastname = element.find_element_by_xpath("td[2]").text
                 firstname = element.find_element_by_xpath("td[3]").text
