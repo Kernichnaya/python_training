@@ -1,6 +1,12 @@
+import time
+
 from selenium.webdriver.support.select import Select
 from model.contact import Contact
 import re
+from model.group import Group
+import random
+
+
 class ContactHelper:
 
     def __init__(self, app):
@@ -73,6 +79,10 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
 
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
     def delete_first_contact(self):
         self.delete_contact_by_index(0)
 
@@ -96,10 +106,6 @@ class ContactHelper:
         self.open_start_page()
         self.contact_cache = None
 
-    def select_contact_by_id(self, id):
-        wd = self.app.wd
-        wd.find_element_by_css_selector("input[value='%s']" % id).click()
-
     def modify_first_contact(self):
         self.modify_contact_by_index(0)
 
@@ -121,6 +127,16 @@ class ContactHelper:
         wd.find_element_by_css_selector("div.msgbox")
         self.open_start_page()
         self.contact_cache = None
+
+    def get_group_value(self):
+        wd = self.app.wd
+        self.open_start_page()
+        wd.find_element_by_link_text("groups").click()
+        group_cache = []
+        for element in wd.find_elements_by_css_selector("span.group"):
+            id = element.find_element_by_name("selected[]").get_attribute("value")
+            group_cache.append(id)
+        return list(group_cache)
 
     def random_modify_id(self, id):
         wd = self.app.wd
@@ -146,6 +162,26 @@ class ContactHelper:
         row = wd.find_elements_by_name("entry")[index]
         cell = row.find_elements_by_tag_name("td")[6]
         cell.find_element_by_tag_name("a").click()
+
+    def get_contact_with_group(self, group):
+        if self.contact_cache is None:
+            wd = self.app.wd
+            self.app.open_home_page()
+            wd.find_element_by_name("group").click()
+            Select(wd.find_element_by_name("group")).select_by_visible_text("%s" % group)
+            self.contact_cache = []
+            for element in wd.find_elements_by_css_selector("tr")[1:]:
+                cells = element.find_elements_by_tag_name("td")
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                firstname = cells[2].text
+                lastname = cells[1].text
+                address = cells[3].text
+                all_email = cells[4].text
+                all_phones = cells[5].text
+                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id, address=address,
+                                                  all_phones_from_home_page=all_phones,
+                                                  all_emails_from_home_page=all_email))
+        return list(self.contact_cache)
 
     def get_contact_list(self):
         if self.contact_cache is None:
@@ -193,3 +229,28 @@ class ContactHelper:
         faxphone = re.search("P: (.*)", text).group(1)
         return Contact(homephone=homephone, workphone=workphone,
                        mobile=mobile, phone2=faxphone)
+
+    def open_add_new_contact_page(self):
+        wd = self.app.wd
+        if not (wd.current_url.endswith("/edit.php") and len(wd.find_elements_by_name("submit")) > 0):
+            wd.find_element_by_link_text("add new").click()
+
+    def add_contact_to_group(self, contact, group):
+        wd = self.app.wd
+        self.open_start_page()
+        self.open_add_new_contact_page()
+        self.fill_contact_form(contact)
+        wd.find_element_by_name("new_group").click()
+        Select(wd.find_element_by_name("new_group")).select_by_visible_text("%s" % group)
+        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        self.open_start_page()
+        self.contact_cache = None
+
+    def remove_contact_from_group(self, id, group):
+        wd = self.app.wd
+        self.open_start_page()
+        wd.find_element_by_name("group").click()
+        Select(wd.find_element_by_name("group")).select_by_visible_text("%s" % group)
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+        wd.find_element_by_xpath("//input[@name='remove']").click()
+        self.open_start_page()

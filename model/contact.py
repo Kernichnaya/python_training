@@ -9,7 +9,6 @@ class Contact:
                  amonth=None, ayear=None, address2=None, phone2=None, id=None, notes=None,
                  all_phones_from_home_page=None, all_emails_from_home_page=None):
         """
-
         :rtype: object
         """
         self.firstname = firstname

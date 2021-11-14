@@ -4,7 +4,6 @@ from model.group import Group
 from model.contact import Contact
 from pymysql.converters import decoders
 
-
 class ORMFixture:
     db = Database()
 
@@ -65,3 +64,4 @@ class ORMFixture:
     @db_session
     def get_not_empty_groups(self):
         return list(select(g for g in ORMFixture.ORMGroup if len(g.contacts) > 0))
+
