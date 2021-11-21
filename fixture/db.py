@@ -53,5 +53,17 @@ class DbFixture:
             cursor.close()
         return list
 
+    def count_contact_in_group(self):
+        list = []
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute("select id, group_id from address_in_groups where deprecated='0000-00-00 00:00:00'")
+            for row in cursor:
+                (id, group_id) = row
+                list.append(Contact(id=str(id), new_group=str(group_id)))
+        finally:
+            cursor.close()
+        return len(list)
+
     def destroy(self):
         self.connection.close()

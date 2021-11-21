@@ -7,7 +7,7 @@ class Contact:
                  address=None, homephone=None, mobile=None, workphone=None, faxphone=None,
                  email=None, email2=None, email3=None, homepage=None, bday=None, bmonth=None, byear=None, aday=None,
                  amonth=None, ayear=None, address2=None, phone2=None, id=None, notes=None,
-                 all_phones_from_home_page=None, all_emails_from_home_page=None):
+                 all_phones_from_home_page=None, all_emails_from_home_page=None, new_group=None):
         """
         :rtype: object
         """
@@ -38,6 +38,7 @@ class Contact:
         self.notes = notes
         self.all_phones_from_home_page = all_phones_from_home_page
         self.all_emails_from_home_page = all_emails_from_home_page
+        self.new_group = new_group
 
     def id_or_max(self):
         if self.id:
