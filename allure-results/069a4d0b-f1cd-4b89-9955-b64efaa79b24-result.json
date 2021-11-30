@@ -1,0 +1,60 @@
+{
+  "name": "test_all_info_on_home_page_and_db",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Given a contact list from the home page",
+      "status": "passed",
+      "start": 1638304695597,
+      "stop": 1638304695598
+    },
+    {
+      "name": "When I get contact list from the database",
+      "status": "passed",
+      "start": 1638304695598,
+      "stop": 1638304697839
+    },
+    {
+      "name": "Then the every contact of the contact list from the home page is equal to the every contact of the contact list from the database",
+      "status": "passed",
+      "start": 1638304697839,
+      "stop": 1638304697839
+    }
+  ],
+  "start": 1638304695596,
+  "stop": 1638304697839,
+  "uuid": "1b05ed3b-7d48-4397-81e5-7f5906cd3d7f",
+  "historyId": "4fff8dcabcfb876680ce83ad6eac1297",
+  "testCaseId": "b627081958c10383eb63030edb5fbe16",
+  "fullName": "test.test_comparison_contacts#test_all_info_on_home_page_and_db",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_comparison_contacts"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_comparison_contacts"
+    }
+  ]
+}

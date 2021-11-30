@@ -1,0 +1,66 @@
+{
+  "name": "test_add_contact[None:lastnameA:firstname8c:middlename3Pvcd9:nicknamep:companyd:addressTR9Vy8GQl:973:2:174707875797873:57671:None:None:None:None:None:None]",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Given a contact list",
+      "status": "passed",
+      "start": 1638304654555,
+      "stop": 1638304654556
+    },
+    {
+      "name": "When I add a contact None:lastnameA:firstname8c:middlename3Pvcd9:nicknamep:companyd:addressTR9Vy8GQl:973:2:174707875797873:57671:None:None:None:None:None:None to the contact list",
+      "status": "passed",
+      "start": 1638304654556,
+      "stop": 1638304661576
+    },
+    {
+      "name": "Then the new contact list is equal to the old list with the added contact",
+      "status": "passed",
+      "start": 1638304661576,
+      "stop": 1638304661580
+    }
+  ],
+  "parameters": [
+    {
+      "name": "json_contacts",
+      "value": "None:lastnameA:firstname8c:middlename3Pvcd9:nicknamep:companyd:addressTR9Vy8GQl:973:2:174707875797873:57671:None:None:None:None:None:None"
+    }
+  ],
+  "start": 1638304654555,
+  "stop": 1638304661581,
+  "uuid": "4a92e59e-f247-4874-9693-d8e2037c9128",
+  "historyId": "fdcc2a599b0e5400295f17f5ae2d93ba",
+  "testCaseId": "d50430283b9a81430c4a119910d45520",
+  "fullName": "test.test_add_contact#test_add_contact",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_add_contact"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_add_contact"
+    }
+  ]
+}

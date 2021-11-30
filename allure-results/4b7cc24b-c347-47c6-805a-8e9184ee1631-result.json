@@ -1,0 +1,66 @@
+{
+  "name": "test_modify_some_contact_name",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Given a non-empty contact list",
+      "status": "passed",
+      "start": 1638304723573,
+      "stop": 1638304723575
+    },
+    {
+      "name": "Given a contact for modifying",
+      "status": "passed",
+      "start": 1638304723575,
+      "stop": 1638304723575
+    },
+    {
+      "name": "When I modify the chosen contact",
+      "status": "passed",
+      "start": 1638304723575,
+      "stop": 1638304733932
+    },
+    {
+      "name": "Then the new contact list is equal to the old list with modified contact",
+      "status": "passed",
+      "start": 1638304733932,
+      "stop": 1638304733933
+    }
+  ],
+  "start": 1638304723573,
+  "stop": 1638304733934,
+  "uuid": "43089e25-2312-4db0-bcb7-25c4fc80b1b7",
+  "historyId": "43e462fd284d999b2372074016a63d24",
+  "testCaseId": "7f5a243a98a49322e00bb873d0520609",
+  "fullName": "test.test_modify_contact#test_modify_some_contact_name",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_modify_contact"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_modify_contact"
+    }
+  ]
+}

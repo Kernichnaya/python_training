@@ -1,0 +1,40 @@
+{
+  "name": "test_phones_on_contact_view_page",
+  "status": "passed",
+  "start": 1638304700070,
+  "stop": 1638304703786,
+  "uuid": "caac19fa-c1e2-4f75-ae51-669f25c8d5ae",
+  "historyId": "bdc682744841d3c6aff2f970e86f5406",
+  "testCaseId": "cf98c9367a00dd074b6fbe0333c3bb0c",
+  "fullName": "test.test_comparison_contacts#test_phones_on_contact_view_page",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_comparison_contacts"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_comparison_contacts"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "test_delete_some_contact",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Given a non-empty contact list",
+      "status": "passed",
+      "start": 1638304711489,
+      "stop": 1638304711491
+    },
+    {
+      "name": "Given a randomly chosen contact",
+      "status": "passed",
+      "start": 1638304711491,
+      "stop": 1638304711491
+    },
+    {
+      "name": "When I delete the chosen contact 428:lastnamemgiU:firstnameHi:None:None:None:None:None:None:None:None:None:None:None:None:None:None from the contact list",
+      "status": "passed",
+      "start": 1638304711491,
+      "stop": 1638304714781
+    },
+    {
+      "name": "Then the new contact list is equal to the old list without deleted contact",
+      "status": "passed",
+      "start": 1638304714781,
+      "stop": 1638304714782
+    }
+  ],
+  "start": 1638304711489,
+  "stop": 1638304714783,
+  "uuid": "5e01a393-3c47-43f9-aa06-3b67ea3ed41f",
+  "historyId": "8ecdfc6bebb59bf305e56cbad2e7b30c",
+  "testCaseId": "c24e51a3645090c407c247ba3176af37",
+  "fullName": "test.test_del_contact#test_delete_some_contact",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_del_contact"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_del_contact"
+    }
+  ]
+}

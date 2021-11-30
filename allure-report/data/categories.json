@@ -1,0 +1,36 @@
+{
+  "uid": "4b4757e66a1912dae1a509f688f20b0f",
+  "name": "categories",
+  "children": [
+    {
+      "name": "Test defects",
+      "children": [
+        {
+          "name": "selenium.common.exceptions.NoSuchElementException: Message: Could not locate element with visible text: name!3?~3$",
+          "children": [
+            {
+              "name": "test_add_contact_into_group",
+              "uid": "dee85483cdd2d759",
+              "parentUid": "ad6a19021b273052788f8736db9b502c",
+              "status": "broken",
+              "time": {
+                "start": 1638304683251,
+                "stop": 1638304686882,
+                "duration": 3631
+              },
+              "flaky": false,
+              "newFailed": false,
+              "newPassed": false,
+              "newBroken": false,
+              "retriesCount": 0,
+              "retriesStatusChange": false,
+              "parameters": []
+            }
+          ],
+          "uid": "ad6a19021b273052788f8736db9b502c"
+        }
+      ],
+      "uid": "bdbf199525818fae7a8651db9eafe741"
+    }
+  ]
+}

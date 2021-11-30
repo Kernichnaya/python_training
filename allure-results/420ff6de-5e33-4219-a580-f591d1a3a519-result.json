@@ -1,0 +1,40 @@
+{
+  "name": "test_name_on_home_page",
+  "status": "passed",
+  "start": 1638304708013,
+  "stop": 1638304710105,
+  "uuid": "fc85b50b-9456-4db0-8eeb-7993fbe47e3d",
+  "historyId": "18f98d91f4c47f6f223b56e6bfa25a33",
+  "testCaseId": "76d5b8f38f8156e018f360f100e2bcda",
+  "fullName": "test.test_comparison_contacts#test_name_on_home_page",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_comparison_contacts"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_comparison_contacts"
+    }
+  ]
+}

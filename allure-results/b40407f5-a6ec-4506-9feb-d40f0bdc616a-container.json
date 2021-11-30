@@ -1,0 +1,13 @@
+{
+  "uuid": "59a47f93-1770-42f0-87ea-4092a5d0ed03",
+  "befores": [
+    {
+      "name": "json_contacts",
+      "status": "passed",
+      "start": 1638304647287,
+      "stop": 1638304647287
+    }
+  ],
+  "start": 1638304647287,
+  "stop": 1638304654423
+}

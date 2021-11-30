@@ -1,0 +1,66 @@
+{
+  "name": "test_add_contact[None:lastnameX:firstname:middlenameJn:nickname:company8y2EM:addressoOW:4747274:57672727972:1:47078717870:None:None:None:None:None:None]",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Given a contact list",
+      "status": "passed",
+      "start": 1638304647292,
+      "stop": 1638304647296
+    },
+    {
+      "name": "When I add a contact None:lastnameX:firstname:middlenameJn:nickname:company8y2EM:addressoOW:4747274:57672727972:1:47078717870:None:None:None:None:None:None to the contact list",
+      "status": "passed",
+      "start": 1638304647296,
+      "stop": 1638304654418
+    },
+    {
+      "name": "Then the new contact list is equal to the old list with the added contact",
+      "status": "passed",
+      "start": 1638304654418,
+      "stop": 1638304654419
+    }
+  ],
+  "parameters": [
+    {
+      "name": "json_contacts",
+      "value": "None:lastnameX:firstname:middlenameJn:nickname:company8y2EM:addressoOW:4747274:57672727972:1:47078717870:None:None:None:None:None:None"
+    }
+  ],
+  "start": 1638304647292,
+  "stop": 1638304654419,
+  "uuid": "dc5f96be-cd6e-4a5b-b3fc-99c880ed1997",
+  "historyId": "a7bdda885061b288e32afd9adb4f351e",
+  "testCaseId": "d50430283b9a81430c4a119910d45520",
+  "fullName": "test.test_add_contact#test_add_contact",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_add_contact"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_add_contact"
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "uid": "63945b2801ebce18",
+  "name": "test_del_contact_in_group",
+  "fullName": "test.test_del_contact_in_group#test_del_contact_in_group",
+  "historyId": "973ce581fa53232d7b7ef09581fb8d6b",
+  "time": {
+    "start": 1638304714946,
+    "stop": 1638304722650,
+    "duration": 7704
+  },
+  "status": "passed",
+  "flaky": false,
+  "newFailed": false,
+  "newBroken": false,
+  "newPassed": false,
+  "retriesCount": 0,
+  "retriesStatusChange": false,
+  "beforeStages": [
+    {
+      "name": "stop",
+      "time": {
+        "start": 1638304638145,
+        "stop": 1638304638145,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    },
+    {
+      "name": "orm",
+      "time": {
+        "start": 1638304683053,
+        "stop": 1638304683089,
+        "duration": 36
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    },
+    {
+      "name": "app",
+      "time": {
+        "start": 1638304714794,
+        "stop": 1638304714945,
+        "duration": 151
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    },
+    {
+      "name": "check_ui",
+      "time": {
+        "start": 1638304714945,
+        "stop": 1638304714945,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    }
+  ],
+  "testStage": {
+    "status": "passed",
+    "steps": [
+      {
+        "name": "Given a non-empty group list and a non-empty contact list",
+        "time": {
+          "start": 1638304714946,
+          "stop": 1638304719066,
+          "duration": 4120
+        },
+        "status": "passed",
+        "steps": [],
+        "attachments": [],
+        "parameters": [],
+        "attachmentsCount": 0,
+        "shouldDisplayMessage": false,
+        "stepsCount": 0,
+        "hasContent": false
+      },
+      {
+        "name": "Given a group with some contacts inside",
+        "time": {
+          "start": 1638304719066,
+          "stop": 1638304722642,
+          "duration": 3576
+        },
+        "status": "passed",
+        "steps": [],
+        "attachments": [],
+        "parameters": [],
+        "attachmentsCount": 0,
+        "shouldDisplayMessage": false,
+        "stepsCount": 0,
+        "hasContent": false
+      },
+      {
+        "name": "When I delete the chosen contact 429 from the chosen group",
+        "time": {
+          "start": 1638304722642,
+          "stop": 1638304722649,
+          "duration": 7
+        },
+        "status": "passed",
+        "steps": [],
+        "attachments": [],
+        "parameters": [],
+        "attachmentsCount": 0,
+        "shouldDisplayMessage": false,
+        "stepsCount": 0,
+        "hasContent": false
+      },
+      {
+        "name": "Then the chosen contact is not in the chosen group",
+        "time": {
+          "start": 1638304722649,
+          "stop": 1638304722649,
+          "duration": 0
+        },
+        "status": "passed",
+        "steps": [],
+        "attachments": [],
+        "parameters": [],
+        "attachmentsCount": 0,
+        "shouldDisplayMessage": false,
+        "stepsCount": 0,
+        "hasContent": false
+      }
+    ],
+    "attachments": [],
+    "parameters": [],
+    "attachmentsCount": 0,
+    "shouldDisplayMessage": false,
+    "stepsCount": 4,
+    "hasContent": true
+  },
+  "afterStages": [
+    {
+      "name": "stop::fin",
+      "time": {
+        "start": 1638304735638,
+        "stop": 1638304737309,
+        "duration": 1671
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    }
+  ],
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_del_contact_in_group"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_del_contact_in_group"
+    },
+    {
+      "name": "resultFormat",
+      "value": "allure2"
+    }
+  ],
+  "parameters": [],
+  "links": [],
+  "hidden": false,
+  "retry": false,
+  "extra": {
+    "severity": "normal",
+    "retries": [],
+    "categories": [],
+    "tags": []
+  },
+  "source": "63945b2801ebce18.json",
+  "parameterValues": []
+}

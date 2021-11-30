@@ -1,0 +1,70 @@
+{
+  "name": "test_add_contact[None:lastnamemgiU:firstnameHi:middlenameL:nicknameOyNgaoJox:companyB:addressVrjmK9:57073:971::9:None:None:None:None:None:None]",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Given a contact list",
+      "status": "passed",
+      "start": 1638304676061,
+      "stop": 1638304676062
+    },
+    {
+      "name": "When I add a contact None:lastnamemgiU:firstnameHi:middlenameL:nicknameOyNgaoJox:companyB:addressVrjmK9:57073:971::9:None:None:None:None:None:None to the contact list",
+      "status": "passed",
+      "start": 1638304676062,
+      "stop": 1638304683030
+    },
+    {
+      "name": "Then the new contact list is equal to the old list with the added contact",
+      "status": "passed",
+      "start": 1638304683030,
+      "stop": 1638304683037
+    }
+  ],
+  "parameters": [
+    {
+      "name": "json_contacts",
+      "value": "None:lastnamemgiU:firstnameHi:middlenameL:nicknameOyNgaoJox:companyB:addressVrjmK9:57073:971::9:None:None:None:None:None:None"
+    }
+  ],
+  "start": 1638304676060,
+  "stop": 1638304683038,
+  "uuid": "be78d736-446c-471b-870b-58fb6d346060",
+  "historyId": "bd86babc428c91064dfd6641f96f0089",
+  "testCaseId": "e33fd51cbf5ac0d75876d0da604c1e31",
+  "fullName": "test.test_add_contact.test_add_contact[None:lastnamemgiU:firstnameHi:middlenameL:nicknameOyNgaoJox:companyB:addressVrjmK9:57073:971#9:None:None:None:None:None:None]",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_add_contact"
+    },
+    {
+      "name": "subSuite",
+      "value": "test_add_contact[None:lastnamemgiU:firstnameHi:middlenameL:nicknameOyNgaoJox:companyB:addressVrjmK9:57073:971"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_add_contact"
+    }
+  ]
+}

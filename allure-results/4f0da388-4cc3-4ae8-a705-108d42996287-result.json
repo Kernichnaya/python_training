@@ -1,0 +1,66 @@
+{
+  "name": "test_modify_some_group_name",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Given a non-empty group list",
+      "status": "passed",
+      "start": 1638304734147,
+      "stop": 1638304734150
+    },
+    {
+      "name": "Given a randomly chosen group for modifying",
+      "status": "passed",
+      "start": 1638304734150,
+      "stop": 1638304734150
+    },
+    {
+      "name": "When I modify the chosen group",
+      "status": "passed",
+      "start": 1638304734151,
+      "stop": 1638304735610
+    },
+    {
+      "name": "Then the new group list is equal to the old list with modified group",
+      "status": "passed",
+      "start": 1638304735610,
+      "stop": 1638304735627
+    }
+  ],
+  "start": 1638304734147,
+  "stop": 1638304735628,
+  "uuid": "03efb554-1311-43a9-bcd5-573a820c3fa5",
+  "historyId": "2a7b3bd633be5943420caf1cf1a996db",
+  "testCaseId": "59b089bd1793b33edb8376ba02fb978f",
+  "fullName": "test.test_modify_group#test_modify_some_group_name",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_modify_group"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_modify_group"
+    }
+  ]
+}

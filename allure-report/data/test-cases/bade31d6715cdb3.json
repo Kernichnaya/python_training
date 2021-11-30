@@ -1,0 +1,230 @@
+{
+  "uid": "bade31d6715cdb3",
+  "name": "test_add_group[None:name^GCt w /:header&:K R pJ=D.\\Lz[}ub:footerOBe.]",
+  "fullName": "test.test_add_group#test_add_group[None:name^GCt w /:header&:K R pJ=D.\\Lz",
+  "historyId": "697257f1f9742eee6850cd65a1bf6c16",
+  "time": {
+    "start": 1638304688693,
+    "stop": 1638304690035,
+    "duration": 1342
+  },
+  "status": "passed",
+  "flaky": false,
+  "newFailed": false,
+  "newBroken": false,
+  "newPassed": false,
+  "retriesCount": 0,
+  "retriesStatusChange": false,
+  "beforeStages": [
+    {
+      "name": "stop",
+      "time": {
+        "start": 1638304638145,
+        "stop": 1638304638145,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    },
+    {
+      "name": "db",
+      "time": {
+        "start": 1638304638146,
+        "stop": 1638304638152,
+        "duration": 6
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    },
+    {
+      "name": "app",
+      "time": {
+        "start": 1638304688629,
+        "stop": 1638304688691,
+        "duration": 62
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    },
+    {
+      "name": "check_ui",
+      "time": {
+        "start": 1638304688692,
+        "stop": 1638304688692,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    }
+  ],
+  "testStage": {
+    "status": "passed",
+    "steps": [
+      {
+        "name": "Given a group list",
+        "time": {
+          "start": 1638304688693,
+          "stop": 1638304688696,
+          "duration": 3
+        },
+        "status": "passed",
+        "steps": [],
+        "attachments": [],
+        "parameters": [],
+        "attachmentsCount": 0,
+        "shouldDisplayMessage": false,
+        "stepsCount": 0,
+        "hasContent": false
+      },
+      {
+        "name": "When I add a group None:name^GCt w /:header&:K R pJ=D.\\Lz[}ub:footerOBe. to the list",
+        "time": {
+          "start": 1638304688697,
+          "stop": 1638304690032,
+          "duration": 1335
+        },
+        "status": "passed",
+        "steps": [],
+        "attachments": [],
+        "parameters": [],
+        "attachmentsCount": 0,
+        "shouldDisplayMessage": false,
+        "stepsCount": 0,
+        "hasContent": false
+      },
+      {
+        "name": "Then the new group list is equal to the old list with the added group",
+        "time": {
+          "start": 1638304690032,
+          "stop": 1638304690034,
+          "duration": 2
+        },
+        "status": "passed",
+        "steps": [],
+        "attachments": [],
+        "parameters": [],
+        "attachmentsCount": 0,
+        "shouldDisplayMessage": false,
+        "stepsCount": 0,
+        "hasContent": false
+      }
+    ],
+    "attachments": [],
+    "parameters": [],
+    "attachmentsCount": 0,
+    "shouldDisplayMessage": false,
+    "stepsCount": 3,
+    "hasContent": true
+  },
+  "afterStages": [
+    {
+      "name": "db::fin",
+      "time": {
+        "start": 1638304735635,
+        "stop": 1638304735635,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    },
+    {
+      "name": "stop::fin",
+      "time": {
+        "start": 1638304735638,
+        "stop": 1638304737309,
+        "duration": 1671
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    }
+  ],
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_add_group"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_add_group"
+    },
+    {
+      "name": "resultFormat",
+      "value": "allure2"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "json_groups",
+      "value": "None:name^GCt w /:header&:K R pJ=D.\\Lz[}ub:footerOBe."
+    }
+  ],
+  "links": [],
+  "hidden": false,
+  "retry": false,
+  "extra": {
+    "severity": "normal",
+    "retries": [],
+    "categories": [],
+    "tags": []
+  },
+  "source": "bade31d6715cdb3.json",
+  "parameterValues": [
+    "None:name^GCt w /:header&:K R pJ=D.\\Lz[}ub:footerOBe."
+  ]
+}

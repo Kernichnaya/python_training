@@ -1,0 +1,66 @@
+{
+  "name": "test_add_group[None:name!3?~3$ :headerX&v:footer 08 ySNbE `6]",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Given a group list",
+      "status": "passed",
+      "start": 1638304694233,
+      "stop": 1638304694234
+    },
+    {
+      "name": "When I add a group None:name!3?~3$ :headerX&v:footer 08 ySNbE `6 to the list",
+      "status": "passed",
+      "start": 1638304694234,
+      "stop": 1638304695531
+    },
+    {
+      "name": "Then the new group list is equal to the old list with the added group",
+      "status": "passed",
+      "start": 1638304695531,
+      "stop": 1638304695535
+    }
+  ],
+  "parameters": [
+    {
+      "name": "json_groups",
+      "value": "None:name!3?~3$ :headerX&v:footer 08 ySNbE `6"
+    }
+  ],
+  "start": 1638304694232,
+  "stop": 1638304695535,
+  "uuid": "b983153c-0ef8-4bda-874c-257925e085e9",
+  "historyId": "8935904c7b3f0afbad6eba21737a60cb",
+  "testCaseId": "8e9b1d07ef6cdb67de3c4a3d82e10652",
+  "fullName": "test.test_add_group#test_add_group",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_add_group"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_add_group"
+    }
+  ]
+}

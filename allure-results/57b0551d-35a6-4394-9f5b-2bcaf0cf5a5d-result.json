@@ -1,0 +1,70 @@
+{
+  "name": "test_add_contact[None:lastnameMwefN:firstname06:middlenameoTju5:nicknamesJlHnsJS:companyGJ6:addresspb1QrD:67974737576::27573727376777470:17477:None:None:None:None:None:None]",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Given a contact list",
+      "status": "passed",
+      "start": 1638304668871,
+      "stop": 1638304668871
+    },
+    {
+      "name": "When I add a contact None:lastnameMwefN:firstname06:middlenameoTju5:nicknamesJlHnsJS:companyGJ6:addresspb1QrD:67974737576::27573727376777470:17477:None:None:None:None:None:None to the contact list",
+      "status": "passed",
+      "start": 1638304668871,
+      "stop": 1638304675881
+    },
+    {
+      "name": "Then the new contact list is equal to the old list with the added contact",
+      "status": "passed",
+      "start": 1638304675881,
+      "stop": 1638304675884
+    }
+  ],
+  "parameters": [
+    {
+      "name": "json_contacts",
+      "value": "None:lastnameMwefN:firstname06:middlenameoTju5:nicknamesJlHnsJS:companyGJ6:addresspb1QrD:67974737576::27573727376777470:17477:None:None:None:None:None:None"
+    }
+  ],
+  "start": 1638304668870,
+  "stop": 1638304675884,
+  "uuid": "caaaab76-b07b-49cc-ba14-4da9bdefa432",
+  "historyId": "5f15c47af225d4dbf2bcaf44b1f44de5",
+  "testCaseId": "0b6a37ccf0158c7655de60a14a43bd58",
+  "fullName": "test.test_add_contact.test_add_contact[None:lastnameMwefN:firstname06:middlenameoTju5:nicknamesJlHnsJS:companyGJ6:addresspb1QrD:67974737576#27573727376777470:17477:None:None:None:None:None:None]",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_add_contact"
+    },
+    {
+      "name": "subSuite",
+      "value": "test_add_contact[None:lastnameMwefN:firstname06:middlenameoTju5:nicknamesJlHnsJS:companyGJ6:addresspb1QrD:67974737576"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_add_contact"
+    }
+  ]
+}

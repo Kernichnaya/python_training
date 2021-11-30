@@ -1,0 +1,40 @@
+{
+  "name": "test_group_list",
+  "status": "passed",
+  "start": 1638304710161,
+  "stop": 1638304711448,
+  "uuid": "16b48b48-9a97-40f4-91d7-7c130a1c4ce4",
+  "historyId": "f17f29013de8c74eab7a07b09922dc90",
+  "testCaseId": "d4b447882ae6fe5227f61499ba550360",
+  "fullName": "test.test_db_matches_ui#test_group_list",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_db_matches_ui"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_db_matches_ui"
+    }
+  ]
+}

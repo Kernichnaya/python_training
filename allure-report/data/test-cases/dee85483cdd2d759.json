@@ -1,0 +1,219 @@
+{
+  "uid": "dee85483cdd2d759",
+  "name": "test_add_contact_into_group",
+  "fullName": "test.test_add_contact_in_group#test_add_contact_into_group",
+  "historyId": "303a78bf27097a48c9376eb381a785f7",
+  "time": {
+    "start": 1638304683251,
+    "stop": 1638304686882,
+    "duration": 3631
+  },
+  "status": "broken",
+  "statusMessage": "selenium.common.exceptions.NoSuchElementException: Message: Could not locate element with visible text: name!3?~3$",
+  "statusTrace": "app = <fixture.application.Application object at 0x000001A8D3BDCDC0>\norm = <fixture.orm.ORMFixture object at 0x000001A8D3BCFA30>, check_ui = False\n\n    def test_add_contact_into_group(app, orm, check_ui):\n        with allure.step(\"Given a non-empty group list and a non-empty contact list\"):\n            if len(orm.get_group_list()) == 0:\n                app.group.create(Group(name=\"test\"))\n            contact = Contact(firstname=\"Editcontact\", lastname=\"Editcontact\")\n            groups = orm.get_group_list()\n        with allure.step(\"Given a random contact and a random group\"):\n            group = random.choice(groups)\n            old_contacts_list_in_group = orm.get_contacts_in_group(group)\n        with allure.step(f\"When I add the randomly chosen group {group} to the randomly chosen contact\"):\n>           app.contact.add_contact_to_group(contact, group.name)\n\ntest\\test_add_contact_in_group.py:17: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nfixture\\contact.py:244: in add_contact_to_group\n    Select(wd.find_element_by_name(\"new_group\")).select_by_visible_text(\"%s\" % group)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.support.select.Select object at 0x000001A8D3D86E50>, text = 'name!3?~3$ '\n\n    def select_by_visible_text(self, text):\n        \"\"\"Select all options that display text matching the argument. That is, when given \"Bar\" this\n           would select an option like:\n    \n            <option value=\"foo\">Bar</option>\n    \n           :Args:\n            - text - The visible text to match against\n    \n            throws NoSuchElementException If there is no option with specified text in SELECT\n           \"\"\"\n        xpath = \".//option[normalize-space(.) = %s]\" % self._escapeString(text)\n        opts = self._el.find_elements(By.XPATH, xpath)\n        matched = False\n        for opt in opts:\n            self._setSelected(opt)\n            if not self.is_multiple:\n                return\n            matched = True\n    \n        if len(opts) == 0 and \" \" in text:\n            subStringWithoutSpace = self._get_longest_token(text)\n            if subStringWithoutSpace == \"\":\n                candidates = self.options\n            else:\n                xpath = \".//option[contains(.,%s)]\" % self._escapeString(subStringWithoutSpace)\n                candidates = self._el.find_elements(By.XPATH, xpath)\n            for candidate in candidates:\n                if text == candidate.text:\n                    self._setSelected(candidate)\n                    if not self.is_multiple:\n                        return\n                    matched = True\n    \n        if not matched:\n>           raise NoSuchElementException(\"Could not locate element with visible text: %s\" % text)\nE           selenium.common.exceptions.NoSuchElementException: Message: Could not locate element with visible text: name!3?~3$\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\selenium\\webdriver\\support\\select.py:140: NoSuchElementException",
+  "flaky": false,
+  "newFailed": false,
+  "newBroken": false,
+  "newPassed": false,
+  "retriesCount": 0,
+  "retriesStatusChange": false,
+  "beforeStages": [
+    {
+      "name": "stop",
+      "time": {
+        "start": 1638304638145,
+        "stop": 1638304638145,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    },
+    {
+      "name": "orm",
+      "time": {
+        "start": 1638304683053,
+        "stop": 1638304683089,
+        "duration": 36
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    },
+    {
+      "name": "app",
+      "time": {
+        "start": 1638304683089,
+        "stop": 1638304683250,
+        "duration": 161
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    },
+    {
+      "name": "check_ui",
+      "time": {
+        "start": 1638304683250,
+        "stop": 1638304683250,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    }
+  ],
+  "testStage": {
+    "status": "broken",
+    "statusMessage": "selenium.common.exceptions.NoSuchElementException: Message: Could not locate element with visible text: name!3?~3$",
+    "statusTrace": "app = <fixture.application.Application object at 0x000001A8D3BDCDC0>\norm = <fixture.orm.ORMFixture object at 0x000001A8D3BCFA30>, check_ui = False\n\n    def test_add_contact_into_group(app, orm, check_ui):\n        with allure.step(\"Given a non-empty group list and a non-empty contact list\"):\n            if len(orm.get_group_list()) == 0:\n                app.group.create(Group(name=\"test\"))\n            contact = Contact(firstname=\"Editcontact\", lastname=\"Editcontact\")\n            groups = orm.get_group_list()\n        with allure.step(\"Given a random contact and a random group\"):\n            group = random.choice(groups)\n            old_contacts_list_in_group = orm.get_contacts_in_group(group)\n        with allure.step(f\"When I add the randomly chosen group {group} to the randomly chosen contact\"):\n>           app.contact.add_contact_to_group(contact, group.name)\n\ntest\\test_add_contact_in_group.py:17: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nfixture\\contact.py:244: in add_contact_to_group\n    Select(wd.find_element_by_name(\"new_group\")).select_by_visible_text(\"%s\" % group)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.support.select.Select object at 0x000001A8D3D86E50>, text = 'name!3?~3$ '\n\n    def select_by_visible_text(self, text):\n        \"\"\"Select all options that display text matching the argument. That is, when given \"Bar\" this\n           would select an option like:\n    \n            <option value=\"foo\">Bar</option>\n    \n           :Args:\n            - text - The visible text to match against\n    \n            throws NoSuchElementException If there is no option with specified text in SELECT\n           \"\"\"\n        xpath = \".//option[normalize-space(.) = %s]\" % self._escapeString(text)\n        opts = self._el.find_elements(By.XPATH, xpath)\n        matched = False\n        for opt in opts:\n            self._setSelected(opt)\n            if not self.is_multiple:\n                return\n            matched = True\n    \n        if len(opts) == 0 and \" \" in text:\n            subStringWithoutSpace = self._get_longest_token(text)\n            if subStringWithoutSpace == \"\":\n                candidates = self.options\n            else:\n                xpath = \".//option[contains(.,%s)]\" % self._escapeString(subStringWithoutSpace)\n                candidates = self._el.find_elements(By.XPATH, xpath)\n            for candidate in candidates:\n                if text == candidate.text:\n                    self._setSelected(candidate)\n                    if not self.is_multiple:\n                        return\n                    matched = True\n    \n        if not matched:\n>           raise NoSuchElementException(\"Could not locate element with visible text: %s\" % text)\nE           selenium.common.exceptions.NoSuchElementException: Message: Could not locate element with visible text: name!3?~3$\n\n..\\..\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\selenium\\webdriver\\support\\select.py:140: NoSuchElementException",
+    "steps": [
+      {
+        "name": "Given a non-empty group list and a non-empty contact list",
+        "time": {
+          "start": 1638304683251,
+          "stop": 1638304683265,
+          "duration": 14
+        },
+        "status": "passed",
+        "steps": [],
+        "attachments": [],
+        "parameters": [],
+        "attachmentsCount": 0,
+        "shouldDisplayMessage": false,
+        "stepsCount": 0,
+        "hasContent": false
+      },
+      {
+        "name": "Given a random contact and a random group",
+        "time": {
+          "start": 1638304683265,
+          "stop": 1638304683268,
+          "duration": 3
+        },
+        "status": "passed",
+        "steps": [],
+        "attachments": [],
+        "parameters": [],
+        "attachmentsCount": 0,
+        "shouldDisplayMessage": false,
+        "stepsCount": 0,
+        "hasContent": false
+      },
+      {
+        "name": "When I add the randomly chosen group 621:name!3?~3$ :headerX&v:footer 08 ySNbE `6 to the randomly chosen contact",
+        "time": {
+          "start": 1638304683268,
+          "stop": 1638304686871,
+          "duration": 3603
+        },
+        "status": "broken",
+        "statusMessage": "selenium.common.exceptions.NoSuchElementException: Message: Could not locate element with visible text: name!3?~3$ \n\n",
+        "statusTrace": "  File \"C:\\Users\\kerni\\PycharmProjects\\python_training\\test\\test_add_contact_in_group.py\", line 17, in test_add_contact_into_group\n    app.contact.add_contact_to_group(contact, group.name)\n  File \"C:\\Users\\kerni\\PycharmProjects\\python_training\\fixture\\contact.py\", line 244, in add_contact_to_group\n    Select(wd.find_element_by_name(\"new_group\")).select_by_visible_text(\"%s\" % group)\n  File \"C:\\Users\\kerni\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\selenium\\webdriver\\support\\select.py\", line 140, in select_by_visible_text\n    raise NoSuchElementException(\"Could not locate element with visible text: %s\" % text)\n",
+        "steps": [],
+        "attachments": [],
+        "parameters": [],
+        "attachmentsCount": 0,
+        "shouldDisplayMessage": true,
+        "stepsCount": 0,
+        "hasContent": true
+      }
+    ],
+    "attachments": [],
+    "parameters": [],
+    "attachmentsCount": 0,
+    "shouldDisplayMessage": true,
+    "stepsCount": 3,
+    "hasContent": true
+  },
+  "afterStages": [
+    {
+      "name": "stop::fin",
+      "time": {
+        "start": 1638304735638,
+        "stop": 1638304737309,
+        "duration": 1671
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "stepsCount": 0,
+      "hasContent": false
+    }
+  ],
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "test"
+    },
+    {
+      "name": "suite",
+      "value": "test_add_contact_in_group"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-GKCS8LH"
+    },
+    {
+      "name": "thread",
+      "value": "12980-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test.test_add_contact_in_group"
+    },
+    {
+      "name": "resultFormat",
+      "value": "allure2"
+    }
+  ],
+  "parameters": [],
+  "links": [],
+  "hidden": false,
+  "retry": false,
+  "extra": {
+    "severity": "normal",
+    "retries": [],
+    "categories": [
+      {
+        "name": "Test defects",
+        "matchedStatuses": [],
+        "flaky": false
+      }
+    ],
+    "tags": []
+  },
+  "source": "dee85483cdd2d759.json",
+  "parameterValues": []
+}
